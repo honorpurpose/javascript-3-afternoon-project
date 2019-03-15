@@ -51,7 +51,16 @@ var employees = [
 */
 
 //Code Here
-
+const employeeUpdater = () => {
+  for (let i = 0; i < employees.length; i++) {
+    if (employees[i]['firstName'] === "Theo") {
+      delete employees[i]
+    } else if (employees[i]['firstName'] === "Lorie") {
+      employees[i]['department'] = 'HR'
+    }
+  }
+  return employees
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -70,7 +79,17 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 //Code Here
 
-
+const removeDuplicates = () => {
+  for (let i = 0; i < workplaceAccidents.length; i++) {
+    for (let n = i + 1; n < workplaceAccidents.length; n++) {
+      if (workplaceAccidents[i] === workplaceAccidents[n]) {
+        workplaceAccidents.splice(n,1)
+        i--
+      }
+    }
+  }
+  return workplaceAccidents
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -97,8 +116,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -140,6 +159,11 @@ var myCar = {
 
 //Code Here
 
+const recordCleaner = () => {
+  for (let i = 0; i < myCar.accidents.length; i++) {
+    myCar.accidents[i].atFaultForAccident = false;
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -158,5 +182,16 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-
+const looper = () => {
+  for (let i = 0; i < numsArr.length; i++) {
+    for (let n = 0; n < numsArr[i].length; n++) {
+      if (numsArr[i][n] % 2 === 1) {
+        numsArr[i][n] = 'odd'
+      } else if (numsArr[i][n] % 2 === 0) {
+        numsArr[i][n] = 'even'
+      }
+    }
+  }
+  return numsArr
+}
 
